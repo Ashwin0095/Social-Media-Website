@@ -1,0 +1,409 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    font-family: sans-serif;
+    background: #000000;
+}
+
+main
+{
+    /* Center contents */
+    text-align: center;
+}
+
+
+/* Login page */
+.card{
+    margin-bottom:20px;
+    border:none;
+    text-align: center;
+}
+
+.box {
+    width: 500px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: #191919;
+    ;
+    text-align: center;
+    transition: 0.25s;
+    margin-top: 100px
+}
+
+.box input[type="text"],
+.box input[type="password"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 10px 10px;
+    width: 300px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s
+}
+
+.box h1 {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500
+}
+
+registration text-muted
+{
+    padding-top:10px;
+}
+.box input[type="text"]:focus,
+.box input[type="password"]:focus {
+    border-color: #2ecc71
+}
+
+.box input[type="submit"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer
+}
+
+.box input[type="submit"]:hover
+{
+    background: #2ecc71
+}
+btn btn-primary rounded-pill log
+{
+     color: #2ecc71
+}
+
+/* homepage */
+/* Nav Bar  */
+.titleHome
+{
+    margin-left: 100px;
+    color:Grey;
+    font-weight: bold;
+}
+
+.nav-user-icon img
+{
+    width: 40px;
+    border-radius : 50%;
+    cursor: pointer;
+}
+
+.navleft
+{
+    display: flex;
+    align-items: center;
+}
+.navleft ul li
+{
+    list-style: none;
+    display: inline-block;
+}
+.navleft ul li img
+{
+    width: 30px;
+    margin: 0 15px;
+}
+.navright
+{
+    display: flex;
+    align-items: center;
+}
+.navright ul li
+{
+    list-style: none;
+    display: inline-block;
+}
+.nav
+{
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid grey;
+
+}
+
+.navright a
+{
+     color:white;
+}
+/* MAin screen */
+.container
+{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 5%;
+}
+
+.main-content
+{
+    flex-basis: 50%;
+}
+
+.left-sidebar
+{
+    flex-basis : 25%;
+    top: 56px;
+    align-self: flex-start;
+    background-color: #000000;
+      box-sizing: border-box;
+      float: left;
+      max-height: 100vh;
+      overflow: auto;
+}
+.right-sidebar
+{
+    flex-basis : 25%;
+    top: 56px;
+    align-self: flex-start;
+    background-color: #000000;
+      box-sizing: border-box;
+      float: right;
+      max-height: 100vh;
+      overflow: auto;
+
+}
+
+
+.left-sidebar-item {
+  height: 50px;
+  width: 100%;
+  border: 1px solid green;
+  margin-bottom: 5px;
+  opacity: 0.5;
+}
+
+.right-sidebar-item {
+  height: 50px;
+  width: 100%;
+  border: 1px solid green;
+  margin-bottom: 5px;
+  opacity: 0.5;
+}
+
+.visitButton
+{
+    color:white;
+    background: #000000;
+    border:none;
+    font-size:17px;
+}
+
+
+.nav-link a
+{
+    text-decoration : none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    width: fit-content;
+    font-size:20px;
+    color:white;
+}
+
+.nav-link a img
+{
+    width: 25px;
+    margin-right: 15px;
+}
+
+.nav-links
+{
+    border-bottom : 1px solid #ccc;
+}
+
+.sidebar-title lable
+{
+    font-size:10;
+    color: white;
+}
+
+.timeline
+{
+    width:100%;
+}
+
+.profileIcon
+{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+}
+
+.profileIcon img
+{
+    vertical-align: middle;
+    border-style: none;
+}
+
+
+
+/*Index*/
+
+.text-start
+{
+    color:white;
+    cursor: pointer;
+
+}
+
+
+/*Profile*/
+h3
+{
+    color: white;
+}
+
+.profilePageIcon
+{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+
+.profilePageIcon img
+{
+    vertical-align: middle;
+    border-style: none;
+}
+
+.profile_name
+{
+    width: 100%;
+    border-radius: 6px;
+    color: #626262;
+    margin: 20px 0;
+    background:black;
+}
+.profile_name p
+{
+    align-items: center;
+    color: white;
+    margin: 15px 0;
+    font-size: 20px;
+}
+
+/*Mesage Card*/
+
+.post-container
+{
+    width: auto;
+    background: black;
+    border-radius: 6px;
+    padding: 20px;
+    color: #626262;
+    margin: 5px 0;
+    border-bottom: 1px solid grey;
+}
+.index-profile
+{
+    align-items: center;
+    color: #ffffff;
+}
+
+.user-profile
+{
+    display: flex;
+    align-items: flex-start;
+}
+
+.user-profile p
+{
+    margin-bottom : -5px;
+    font-weight: 500;
+    color: white;
+}
+
+.user-profile span
+{
+    font-size: 13px;
+    color: #9a9a9a;
+}
+
+.post-text
+{
+    color: #9a9a9a;
+    margin: 15px 0;
+    font-size: 15px;
+}
+.post-text p
+{
+    color: white;
+    font-size: 15px;
+    text-align: left;
+}
+
+/*Gift card*/
+.total
+{
+    width: auto;
+    background: black;
+    border-radius: 6px;
+    color: #626262;
+}
+
+.total p
+{
+    text-align:center;
+    color: white;
+}
+
+.gift-text
+{
+    color: #9a9a9a;
+    margin: 15px 0;
+    font-size: 15px;
+    margin-left: auto;
+    margin-right: 0;
+}
+.gift-text p
+{
+    color: white;
+}
+
+/*Text Box*/
+.text_box
+{
+     /* Center contents */
+    text-align:center;
+    background-color:  #000000;
+
+}
+
+
+.empty
+{
+    text-align: left;
+}
+
+.delete
+{
+    align-items: center;
+    color:white;
+    background: #000000;
+}
+
+.dropbox
+{
+    padding:20px;
+}

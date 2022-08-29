@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sent
+{% endblock %}
+
+{% block main %}
+
+<div action="/sent" class="timeline">
+    <div class="total">
+        <p> All Messages: {{ (message) }} </p>
+        <p>Total Gifts Sent: ${{ (spent) }}</p>
+    </div>
+
+    {% for data in sent %}
+    <div class="post-container">
+        <div class="user-profile">
+            <div>
+               <p>To: {{data['to_username']}}</p>
+               <span>{{data['datetime']}}</span>
+            </div>
+        </div>
+        <div class="post-text">
+            <p>Gift: ${{data['gift']}}</p>
+            <p class="post-text">Message: {{data['message']}}</p>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

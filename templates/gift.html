@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Gifts
+{% endblock %}
+
+{% block main %}
+
+<div action="/gift" class="timeline">
+    <div class="total">
+        <p>Gifts received Total: ${{ (total) }}</p>
+    </div>
+
+    {% for gift in gifts %}
+    <div class="post-container">
+        <div class="user-profile">
+            <div>
+               <p>Anoynomus</p>
+               <span>{{ gift['datetime'] }}</span>
+            </div>
+            <div class="gift-text">
+                <p>Received: ${{ gift['gift'] }} </p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

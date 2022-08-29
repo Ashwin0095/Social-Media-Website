@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block main %}
+<form action="/login" method="POST">
+     <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card">
+              <div class="box">
+                <h1>Login</h1>
+                <input autocomplete="off" autofocus name="username" placeholder="Username" type="text">
+                <input name="password" placeholder="Password" type="password">
+                <button class="btn btn-primary rounded-pill rounded-lg log" type="submit">Log In</button>
+                <!--<a class="forgot text-muted" href="#">Forgot password?</a>-->
+                <br>
+                <a class="registration text-muted" href="/register">Create New Account</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</form>
+{% endblock %}
+
+
+
+

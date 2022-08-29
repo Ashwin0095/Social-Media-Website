@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <div action="/" class="timeline">
+
+         {% for data in notifications %}
+        <div class="post-container">
+            <div class="user-profile">
+               <div>
+                   <p>Anoynomus</p>
+                   <span> {{data['datetime']}} </span>
+               </div>
+            </div>
+            <div class="post-text">
+                <p> Gift: ${{data['gift']}} </p>
+                <p> Message: {{data['message']}} </p>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+
+{% endblock %}

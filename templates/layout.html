@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+
+        <!-- http://getbootstrap.com/docs/4.5/ -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+        <link href="/static/styles.css" rel="stylesheet">
+        <link href="/static/WhosThis.png" rel="icon">
+
+
+        <!-- http://getbootstrap.com/docs/4.5/ -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+        <title>AnonymousMe</title>
+    <style>
+      body {
+        margin: 0;
+      }
+
+      /* width */
+      ::-webkit-scrollbar {
+        background-color: transparent;
+        width: 7px;
+        height: 5px;
+      }
+
+      /* Track */
+      ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 3px rgba(38, 57, 59, 0.32);
+        background-color: transparent;
+        border-radius: 10px;
+      }
+
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: rgba(38, 57, 59, 0.32);
+        border-radius: 10px;
+      }
+
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: #000000;
+      }
+    </style>
+
+    </head>
+
+
+    <body>
+
+        <!-- Top Nav Bar -->
+        <nav class="nav">
+            {% if session.user_id %}
+            <div class="navleft" id="navbar">
+                <a class="navbar-brand" href="/"><span class="titleHome">AnonymousMe</span></a>
+
+                <div class="nav-user-icon">
+                    <a href="/profile"> <img src="static/WhosThis.png"  href="/profile" > </a>
+                </div>
+
+
+            </div>
+
+            <div class="navright" id="navbar">
+                <a  class="nav-link logout" href="/logout">Log Out</a>
+            </div>
+            {% endif %}
+        </nav>
+
+        {% if get_flashed_messages() %}
+            <header>
+                <div class="alert alert-primary border text-center" role="alert">
+                    {{ get_flashed_messages() | join(" ") }}
+                </div>
+            </header>
+        {% endif %}
+
+        <!-- Main Screen -->
+        <div class="container">
+            <!---------- Left side bar ------------>
+            <div class="left-sidebar">
+                {% if session.user_id %}
+                <div class="nav-link" >
+                    <a href="/profile">Profile</a>
+                    <a href="/">Home</a>
+                    <a href="/all_notification">Notification</a>
+                    <a href="/gift">Gifts</a>
+                    <a href="/sent">Sent</a>
+                    <a href="/settings">Settings</a>
+                </div>
+                {% endif %}
+            </div>
+
+        <!----------  Main - content ------------>
+        <main class="container p-5">
+        {% block main %}{% endblock %}
+        </main>
+
+
+            <!---------- Right side bar ------------>
+            <div  class="right-sidebar">
+                <div class="sidebar-title">
+                    {% if session.user_id %}
+                    <lable>People you may know</lable>
+                    <table class="table table dark">
+                        <tbody>
+                            <!-- Users list -->
+                            {% for data in usersname %}
+                            <tr>
+                                <a><form class="visitButton" action="{{ url_for('visit', uid=data.user_id) }}" ><img class="profileIcon" src="/static/WhosThis.png" alt=""><input class="visitButton" type="submit" value="{{ data['username'] }}"></form></a>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    {% endif %}
+                </div>
+           </div>
+
+        </div>
+    </body>
+</html>

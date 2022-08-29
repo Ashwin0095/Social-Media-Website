@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Send Message
+{% endblock %}
+
+{% block main %}
+
+<form action="/text" class="timeline" method="post">
+    <div  class="text_box">
+
+        <div class="form-group">
+            {% for data in their %}
+            <label style="color: white" for="exampleFormControlSelect2">To: {{data['username']}} </label>
+            {% endfor %}
+
+            <textarea class="form-control" autofocus name="text" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+
+         <div class="empty">
+            <div class="dropbox">
+                <div class="dropdown dark">
+                    <select class="form-select-dark" aria-label="Default select example" name="gift">
+                      <option selected>Gift a Candy</option>
+                      <option value="5">$5</option>
+                      <option value="10">$10</option>
+                      <option value="20">$20</option>
+                      <option value="50">$50</option>
+                      <option value="100">$100</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <button class="btn btn-primary" type="submit">Send</button>
+        </div>
+    </div>
+</form>
+
+{% endblock %}

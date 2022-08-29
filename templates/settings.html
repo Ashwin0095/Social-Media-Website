@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Settings
+{% endblock %}
+
+{% block main %}
+
+<form action="/settings" class="delete" method="POST">
+    <h8>Delete Account ?</h8>
+    <div class="post-container">
+        <p>Confirm You want to Delete this account. </p>
+        <div class="form-group">
+            <label>Write "CONFIRM" below.</label>
+            <input type="TEXT" autocomplete="off" class="form-control" name="confirmation" >
+        </div>
+        <button class="btn btn-primary" type="submit">Confirm</button>
+    </div>
+</form>
+
+{% endblock %}

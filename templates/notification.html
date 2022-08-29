@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Notifications
+{% endblock %}
+
+{% block main %}
+    <div action="/all_notification" class="timeline">
+        <div class="total">
+            <p>All Notifictions: {{ (total) }}</p>
+        </div>
+
+            {% for notification in notifications %}
+        <div class="post-container">
+            <div class="user-profile">
+                <div>
+                   <p>Anoynomus</p>
+                   <span>{{notification['datetime']}}</span>
+                </div>
+            </div>
+            <div class="post-text">
+                <p>Gift: ${{notification['gift']}}</p>
+                <p class="post-text">Message: {{notification['message']}}</p>
+            </div>
+        </div>
+            {% endfor %}
+    </div>
+{% endblock %}

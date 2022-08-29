@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block main %}
+<div action="/profile" class="timeline">
+
+    <div class="profile_name">
+        <img class="profilePageIcon" src="/static/WhosThis.png" alt="">
+        {% for data in profile %}
+        <h3>{{ data['username'] }}</h3>
+        {% endfor %}
+    </div>
+
+
+    {% for data in notifications %}
+    <div class="post-container">
+        <div class="user-profile">
+           <div>
+               <p>Anoynomus</p>
+               <span> {{data['datetime']}} </span>
+           </div>
+        </div>
+        <div class="post-text">
+            <p> Gift: ${{data['gift']}} </p>
+            <p> Message: {{data['message']}} </p>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+{% endblock %}
